@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+	<script src="http://d3js.org/d3.v4.0.0-alpha.43.min.js"></script>
+</head>
+<body>
+<h1>State Change Using Transition</h1>
+
+<svg width="900" height="600"></svg>        <!-- SVG graphics will go here  -->
+
+<script type="text/javascript">
+
+var members = [
+		{ id: "327", 	state: [2, 3, 1] },
+		{ id: "42", 	state: [2, 2, 2] },
+		{ id: "96",		state: [2, 1, 1]}
+];
+
+var	Time = 0;
+
+d3.select("svg").append("rect")
+  .attr("x",0)
+  .attr("y",300)
+  .attr("width",10)
+  .attr("height",10)
+  .style("fill", "Crimson")
+  .transition()
+		// .duration(2000)
+		.on("start", changeState);
+
+ function changeState()  {
+	 Time = Time + 1;
+	 console.log(Time);
+	 if (Time < 11) {
+	 d3.active(this)
+      //  .attr("x", 320)
+     .transition()
+				 	.duration(400)
+       .attr("x", 60 + (Time * 80))
+			 .attr("y", 80 + ( 500 - ((Time % 3) *200) ))
+     .transition()
+       .on("start", changeState);
+		 };
+ };
+
+</script>
+
+<!-- NOTE: getting info about how to handle chain transitions from:
+http://bl.ocks.org/mbostock/346f4d967650b27c0511 -->
+</body>
+</html>
+
+  <!-- .transition()
+    .duration(2500)
+    .delay(function(d) { return d * 40; })
+    .on("start", slide);
+
+function slide() {
+  d3.active(this)
+      .attr("cx", width)
+    .transition()
+      .attr("cx", 0)
+    .transition()
+      .on("start", slide); -->
