@@ -1,0 +1,44 @@
+  html {
+    min-width: 1040px;
+  }
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    margin: 1em auto 4em auto;
+    position: relative;
+    width: 960px;
+  }
+
+  h1 {
+    font-size: 40px;
+    letter-spacing: -2px;
+    margin: .3em 0 .1em 0;
+  }
+
+  h2 {
+    margin-top: 2em;
+  }
+
+  h1, h2, h3 {
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+  }
+
+.courtesy-snacks {
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+  .instructor p {
+    margin-top: 2em;
+  }
+
+  ul {
+	/*padding-left:  0;*/
+  /*margin-left: 5;*/
+	margin-top:  0;
+  padding-top: 0;
+	}
+
+li {
+  margin-bottom: 7px;
+}
